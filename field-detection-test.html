@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Sensitive Field Detection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+    .test-section {
+      margin: 30px 0;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .test-section h3 {
+      margin-top: 0;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px 0;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+    .should-work {
+      background-color: #e8f5e9;
+    }
+    .should-not-work {
+      background-color: #ffebee;
+    }
+    .legend {
+      margin: 20px 0;
+      padding: 15px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Write Better Everywhere - Sensitive Field Detection Test</h1>
+
+  <div class="legend">
+    <strong>Testing Instructions:</strong>
+    <ul>
+      <li><span style="background-color: #e8f5e9; padding: 2px 8px;">Green fields</span> - Extension SHOULD work (write 30+ characters and wait)</li>
+      <li><span style="background-color: #ffebee; padding: 2px 8px;">Red fields</span> - Extension SHOULD NOT work (should be excluded)</li>
+      <li>Check the console (F12) for exclusion logs starting with "[Content Script] Excluding..."</li>
+    </ul>
+  </div>
+
+  <div class="test-section should-work">
+    <h3>✅ Safe Fields - SHOULD WORK</h3>
+
+    <label for="comment">Comment Field (type="text"):</label>
+    <input type="text" id="comment" placeholder="Write a comment with 30+ characters">
+
+    <label for="search">Search Field (type="search"):</label>
+    <input type="search" id="search" placeholder="Search query">
+
+    <label for="website">URL Field (type="url"):</label>
+    <input type="url" id="website" placeholder="https://example.com">
+
+    <label for="description">Textarea:</label>
+    <textarea id="description" rows="4" placeholder="Write a description with 30+ characters"></textarea>
+
+    <label for="feedback">Regular Text Area:</label>
+    <textarea id="feedback" rows="4" placeholder="Type your feedback here"></textarea>
+  </div>
+
+  <div class="test-section should-not-work">
+    <h3>🔴 Sensitive Fields - SHOULD BE EXCLUDED</h3>
+
+    <label for="password1">Password Field (type="password"):</label>
+    <input type="password" id="password1" placeholder="Enter password">
+
+    <label for="email1">Email Field (type="email"):</label>
+    <input type="email" id="email1" placeholder="Enter email">
+
+    <label for="tel1">Telephone Field (type="tel"):</label>
+    <input type="tel" id="tel1" placeholder="Enter phone number">
+
+    <label for="username1">Field with name="username":</label>
+    <input type="text" name="username" id="username1" placeholder="Username field">
+
+    <label for="user_login">Field with id containing "login":</label>
+    <input type="text" id="user_login" placeholder="Login field">
+
+    <label for="card_number">Field with name="card_number":</label>
+    <input type="text" name="card_number" id="card_number" placeholder="Credit card">
+
+    <label for="cvv">Field with id="cvv":</label>
+    <input type="text" id="cvv" placeholder="CVV code">
+
+    <label for="autocomplete_test">Field with autocomplete="current-password":</label>
+    <input type="text" id="autocomplete_test" autocomplete="current-password" placeholder="Autocomplete password">
+
+    <label for="sensitive_data">Field with data-sensitive="true":</label>
+    <input type="text" id="sensitive_data" data-sensitive="true" placeholder="Explicitly marked sensitive">
+
+    <label for="aria_password">Field with aria-label="Password":</label>
+    <input type="text" id="aria_password" aria-label="Password" placeholder="ARIA labeled password">
+  </div>
+
+  <div class="test-section should-not-work">
+    <h3>🔴 Login Form Context - SHOULD BE EXCLUDED</h3>
+    <form id="login-form">
+      <label for="login_username">Username (in login form):</label>
+      <input type="text" id="login_username" placeholder="Username">
+
+      <label for="login_message">Message (in login form):</label>
+      <textarea id="login_message" rows="3" placeholder="Even regular fields in login forms are excluded"></textarea>
+    </form>
+  </div>
+
+  <div class="test-section should-work">
+    <h3>✅ ContentEditable - SHOULD WORK</h3>
+    <label>ContentEditable Div:</label>
+    <div contenteditable="true" style="border: 1px solid #ddd; padding: 10px; min-height: 100px; background: white;">
+      Click here and type a message with more than 30 characters...
+    </div>
+  </div>
+
+  <div class="test-section should-not-work">
+    <h3>🔴 Payment Form - SHOULD BE EXCLUDED</h3>
+    <form class="payment-form">
+      <label for="payment_name">Name on Card:</label>
+      <input type="text" id="payment_name" placeholder="Name">
+
+      <label for="payment_notes">Payment Notes:</label>
+      <textarea id="payment_notes" rows="2" placeholder="Even regular fields in payment forms are excluded"></textarea>
+    </form>
+  </div>
+
+</body>
+</html>
