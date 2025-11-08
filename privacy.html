@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Write Better Everywhere</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        .last-updated {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        .highlight {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-left: 4px solid #4caf50;
+            margin: 20px 0;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            margin: 10px 0;
+        }
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Privacy Policy for Write Better Everywhere</h1>
+    <p class="last-updated">Last Updated: January 2025</p>
+
+    <div class="highlight">
+        <strong>Privacy Summary:</strong> Write Better Everywhere is designed with privacy as a top priority. Your API keys are stored locally in your browser, your text is sent only to the AI provider you choose, and we never collect, store, or transmit your data to any third-party servers.
+    </div>
+
+    <h2>1. Information Collection and Use</h2>
+
+    <h3>1.1 Data Stored Locally</h3>
+    <p>Write Better Everywhere stores the following information locally in your browser using Chrome's <code>chrome.storage.sync</code> API:</p>
+    <ul>
+        <li><strong>API Keys:</strong> Your API keys for Anthropic Claude, OpenAI, Google Gemini, or custom API endpoints (if you choose to configure them)</li>
+        <li><strong>Settings:</strong> Your preferences including:
+            <ul>
+                <li>Selected AI provider (Anthropic, OpenAI, Gemini, Custom, or Demo mode)</li>
+                <li>Selected AI model</li>
+                <li>Extension enabled/disabled status</li>
+                <li>Trigger preferences (sentence completion, paragraph completion, fallback timer)</li>
+                <li>Minimum text length threshold</li>
+                <li>Floating button visibility preference</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Important:</strong> This data is stored securely in your browser and synced across your Chrome browsers if you're signed into Chrome. It is never transmitted to us or any third party.</p>
+
+    <h3>1.2 Data Transmitted to AI Providers</h3>
+    <p>When you use Write Better Everywhere to analyze text, the extension sends:</p>
+    <ul>
+        <li><strong>Your text content:</strong> The text you want analyzed is sent directly from your browser to the AI provider you selected (Anthropic, OpenAI, Google Gemini, or your custom API)</li>
+        <li><strong>Your API key:</strong> Used to authenticate with the AI provider</li>
+    </ul>
+    <p><strong>Important:</strong> This data goes directly from your browser to the AI provider's servers. Write Better Everywhere acts as a messenger and does not intercept, store, or process this data on any intermediate servers.</p>
+
+    <h3>1.3 Demo Mode</h3>
+    <p>When using Demo Mode (no API key configured), all text analysis happens locally in your browser using basic pattern matching. No data is transmitted to any external servers.</p>
+
+    <h2>2. Third-Party AI Provider Privacy Policies</h2>
+    <p>When you use Write Better Everywhere with an AI provider, that provider's privacy policy governs how they handle your data. Please review the privacy policy of your chosen provider:</p>
+    <ul>
+        <li><strong>Anthropic Claude:</strong> <a href="https://www.anthropic.com/privacy" target="_blank">https://www.anthropic.com/privacy</a></li>
+        <li><strong>OpenAI:</strong> <a href="https://openai.com/privacy" target="_blank">https://openai.com/privacy</a></li>
+        <li><strong>Google Gemini:</strong> <a href="https://ai.google.dev/gemini-api/terms" target="_blank">https://ai.google.dev/gemini-api/terms</a></li>
+    </ul>
+    <p><strong>Note:</strong> Each provider has different data retention and usage policies. We recommend reviewing their policies before using their services.</p>
+
+    <h2>3. Permissions Explained</h2>
+    <p>Write Better Everywhere requires the following Chrome extension permissions:</p>
+    <ul>
+        <li><strong>storage:</strong> To save your API keys and settings locally in your browser</li>
+        <li><strong>activeTab:</strong> To access the text content in the tab you're currently viewing when you request analysis</li>
+        <li><strong>&lt;all_urls&gt; (access to all websites):</strong> To work on any website where you write text (Gmail, Twitter, Google Docs, etc.)</li>
+        <li><strong>contextMenus:</strong> To provide the right-click "Analyze with Write Better Everywhere" option in text fields</li>
+    </ul>
+    <p><strong>Important:</strong> These permissions are used solely to provide the extension's functionality. We do not use them to collect data, track your browsing, or perform any actions without your explicit request.</p>
+
+    <h2>4. Data We Do NOT Collect</h2>
+    <p>Write Better Everywhere does not:</p>
+    <ul>
+        <li>Collect or store any user data on external servers</li>
+        <li>Track your browsing history or behavior</li>
+        <li>Use analytics or telemetry services</li>
+        <li>Share your data with any third parties (except the AI provider you explicitly choose)</li>
+        <li>Contain advertisements or third-party tracking scripts</li>
+        <li>Automatically analyze your text without your request</li>
+    </ul>
+
+    <h2>5. Your Control</h2>
+    <p>You have complete control over your data:</p>
+    <ul>
+        <li><strong>When data is sent:</strong> Text is only sent for analysis when you explicitly click "Analyze" or use a manual trigger</li>
+        <li><strong>Which provider receives data:</strong> You choose which AI provider to use (or use Demo mode with no external transmission)</li>
+        <li><strong>Your API keys:</strong> You manage your own API keys and can delete them at any time through the extension settings</li>
+        <li><strong>Extension removal:</strong> Uninstalling the extension removes all stored settings and API keys from your browser</li>
+    </ul>
+
+    <h2>6. Security</h2>
+    <p>We take security seriously:</p>
+    <ul>
+        <li>API keys are stored using Chrome's secure storage API with encryption</li>
+        <li>All API communications use HTTPS</li>
+        <li>The extension is open source - you can review the code at <a href="https://github.com/yourusername/write-better-everywhere" target="_blank">GitHub</a></li>
+        <li>No third-party dependencies for core functionality (only AI provider APIs you explicitly configure)</li>
+    </ul>
+
+    <h2>7. Children's Privacy</h2>
+    <p>Write Better Everywhere does not knowingly collect any information from children. The extension is designed for general use and does not target children specifically. Users must be old enough to create accounts with third-party AI providers if they choose to use those services.</p>
+
+    <h2>8. Changes to This Privacy Policy</h2>
+    <p>We may update this privacy policy from time to time. When we do, we will:</p>
+    <ul>
+        <li>Update the "Last Updated" date at the top of this policy</li>
+        <li>Publish the new policy at this URL</li>
+        <li>Include a notice in the extension update notes if changes are significant</li>
+    </ul>
+
+    <h2>9. Open Source</h2>
+    <p>Write Better Everywhere is open source software. You can review the complete source code, verify our privacy claims, and even contribute to the project at:</p>
+    <p><a href="https://github.com/yourusername/write-better-everywhere" target="_blank">https://github.com/yourusername/write-better-everywhere</a></p>
+
+    <h2>10. Contact</h2>
+    <p>If you have questions about this privacy policy or Write Better Everywhere's privacy practices, please:</p>
+    <ul>
+        <li>Open an issue on our GitHub repository</li>
+        <li>Review the extension documentation in the README</li>
+    </ul>
+
+    <h2>11. Legal Compliance</h2>
+    <p>Write Better Everywhere complies with applicable data protection laws including GDPR and CCPA by:</p>
+    <ul>
+        <li>Not collecting personal data without explicit user action</li>
+        <li>Providing transparency about data flows</li>
+        <li>Giving users control over when and how their data is processed</li>
+        <li>Not selling or sharing user data</li>
+        <li>Allowing users to delete all extension data by uninstalling</li>
+    </ul>
+
+    <hr style="margin: 40px 0; border: none; border-top: 1px solid #ddd;">
+
+    <p style="text-align: center; color: #7f8c8d; font-size: 14px;">
+        Write Better Everywhere - Privacy-First AI Writing Assistant<br>
+        MIT License | Open Source | User-Controlled
+    </p>
+</body>
+</html>
